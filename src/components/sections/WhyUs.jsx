@@ -39,39 +39,39 @@ function WatermarkBackground() {
 const pillars = [
   {
     number: '01',
-    title: 'Delivered in 7 Days',
+    title: 'You See It Before You Pay',
     description:
-      'No months of waiting or endless back-and-forth. We work fast and launch your complete professional online presence in exactly one week.',
+      "We build a working preview first. If you like it, we move forward — you're never buying based on a promise.",
   },
   {
     number: '02',
-    title: 'Zero Marketing Fluff',
+    title: 'You Only Pay For What You Need',
     description:
-      "We don't talk about useless metrics or corporate synergy. We build high-converting sites that make your phone ring and help you capture local reviews.",
+      'Just a website? Just Google Maps? Full setup? You choose — nothing is forced into a package.',
   },
   {
     number: '03',
-    title: 'Optimized for Phone Calls',
+    title: 'We Talk On WhatsApp, Not Tickets',
     description:
-      'Most homeowners search for services on their phones. We design clear, easy tap-to-call buttons and booking forms that turn traffic into actual jobs.',
+      "No client portals, no back-and-forth email chains — you reach us the way you'd reach anyone else.",
   },
   {
     number: '04',
-    title: 'Built-in Local SEO',
+    title: 'One Person, Full Accountability',
     description:
-      'We structure your site and Google Maps strategy to capture local demand, making sure your business shows up when local customers search for your trade.',
+      'You work directly with the person building your site — nothing gets lost between departments.',
   },
   {
     number: '05',
-    title: 'Trade-Specific Copywriting',
+    title: 'Built Around Local Search',
     description:
-      "You don't need to write a single line of text. We handle all the copywriting, tailoring it specifically to explain your craftsmanship and build trust.",
+      "Google Maps and local visibility aren't an afterthought here — they're built in from day one.",
   },
   {
     number: '06',
-    title: 'Commercial Credibility',
+    title: 'Clear Pricing, Clear Timeline',
     description:
-      'A polished website and professional LinkedIn presence make you look credible to commercial partners, property managers, and insurance contractors.',
+      "You'll know the cost and the payment milestones before any work starts — no surprises later.",
   },
 ]
 
@@ -148,7 +148,7 @@ export default function WhyUs() {
               variants={fadeInUp}
               className="font-display text-4xl lg:text-5xl font-medium text-ink leading-tight mb-16 max-w-2xl"
             >
-              A Complete Marketing Footprint.<br />Built Specifically for Local Trades.
+              Not Just Another Web Designer.
             </motion.h2>
 
             {/* Pull Quote */}
@@ -157,7 +157,7 @@ export default function WhyUs() {
               className="relative border-l-2 border-gold pl-8 py-2 mb-10"
             >
               <p className="font-display text-xl lg:text-2xl italic text-ink leading-relaxed mb-4">
-                "Most agencies charge contractors high monthly retainers and deliver zero results. We build your entire local presence in one week, then give you the keys."
+                "Most of what makes this work isn't the code — it's how we work with you."
               </p>
               <footer className="section-label">— Phtnex Business Philosophy</footer>
             </motion.blockquote>
@@ -167,7 +167,7 @@ export default function WhyUs() {
               variants={fadeInUp}
               className="text-sm text-ink-muted max-w-xl leading-relaxed"
             >
-              We bridge the gap for local business owners who excel at their physical trade but lack the time or tools to build a premium online reputation.
+              We bridge the gap for travel agencies, consultants, and local businesses across Pakistan who are excellent at what they do but have no time or expertise to build a proper online presence.
             </motion.p>
           </motion.div>
 

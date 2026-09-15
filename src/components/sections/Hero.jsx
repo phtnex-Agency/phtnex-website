@@ -158,14 +158,14 @@ export default function Hero() {
                 onClick={() => handleScroll('#work')}
                 className="group inline-flex items-center gap-2 text-sm font-medium text-ink-muted hover:text-ink transition-colors duration-300"
               >
-                <span>View Trade Case Studies</span>
+                <span>View Case Studies</span>
                 <span className="inline-block transition-transform duration-300 group-hover:translate-y-1">↓</span>
               </button>
             </motion.div>
 
             {/* Trust micro-copy */}
             <motion.p variants={itemVariants} className="text-xs text-ink-light mb-14">
-              Guaranteed 7-day launch · Custom design for local trades · Phone-call optimized
+              Guaranteed 7-day launch · Custom design for travel agencies, consultants, and local businesses in Pakistan · Phone-call optimized
             </motion.p>
 
             {/* Divider */}

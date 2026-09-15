@@ -168,7 +168,7 @@ export default function Pricing() {
             </motion.h2>
           </div>
           <motion.p variants={fadeInUp} className="text-sm text-ink-muted max-w-sm leading-relaxed lg:text-right">
-            We don't lock you into expensive monthly contracts. We build your entire local trade authority footprint in 7 days for a single flat fee.
+            We don't lock you into expensive monthly contracts. We build your entire local search presence in 7 days for a single flat fee.
           </motion.p>
         </motion.div>
 

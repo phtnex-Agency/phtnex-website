@@ -31,7 +31,7 @@ const tradeOptions = [
   'Interior Designers',
   'Photographers & Videographers',
   'Restaurants & Cafés',
-  'Other Trade',
+  'Other',
 ]
 
 const fadeInUp = {
@@ -154,7 +154,7 @@ export default function ContactCTA() {
                 </div>
                 <h3 className="font-display text-xl text-surface">Message received.</h3>
                 <p className="text-sm text-surface/60 leading-relaxed">
-                  Thank you for reaching out. We will review your trade business details and follow up with your custom launch strategy within 24 hours.
+                  Thank you for reaching out. We will review your business details and follow up with your custom launch strategy within 24 hours.
                 </p>
               </div>
             ) : (
@@ -192,7 +192,7 @@ export default function ContactCTA() {
                   />
                 </div>
 
-                {/* Service + Trade row */}
+                {/* Service + Business Type row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
                     <label htmlFor="service" className="section-label text-surface/40 block mb-3">
@@ -218,7 +218,7 @@ export default function ContactCTA() {
 
                   <div>
                     <label htmlFor="trade" className="section-label text-surface/40 block mb-3">
-                      Your Trade Sector
+                      Business Type
                     </label>
                     <div className="relative">
                       <select
@@ -229,7 +229,7 @@ export default function ContactCTA() {
                         className="form-select !text-surface border-surface/20 focus:border-surface/60 w-full"
                         style={{ background: 'transparent', color: form.trade ? 'rgba(250,250,248,1)' : 'rgba(250,250,248,0.3)' }}
                       >
-                        <option value="" disabled style={{ background: '#0A0A0A' }}>Select Trade</option>
+                        <option value="" disabled style={{ background: '#0A0A0A' }}>Select Business Type</option>
                         {tradeOptions.map((o) => (
                           <option key={o} value={o} style={{ background: '#0A0A0A' }}>{o}</option>
                         ))}
@@ -250,7 +250,7 @@ export default function ContactCTA() {
                     rows={4}
                     value={form.overview}
                     onChange={handleChange}
-                    placeholder="Tell us about your trade business, your target service cities, and any goals that would help us build your launch strategy..."
+                    placeholder="Tell us about your business, your target service cities, and any goals that would help us build your launch strategy..."
                     className="form-input !text-surface placeholder-surface/20 border-surface/20 focus:border-surface/60 bg-transparent resize-none border border-surface/10 p-4 w-full"
                   />
                 </div>

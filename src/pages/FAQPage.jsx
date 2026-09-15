@@ -16,7 +16,7 @@ const categories = [
       },
       {
         q: 'What types of businesses do you work with?',
-        a: "We specialise in US-based home services and trade businesses — plumbers, electricians, roofers, HVAC techs, landscapers, cleaners, and similar trades. If you're a local service business, we're a great fit.",
+        a: "We specialise in travel agencies, consultants, and local service businesses across Pakistan. If you're a business that depends on local customers finding you, we're a great fit.",
       },
     ],
   },
@@ -33,7 +33,7 @@ const categories = [
       },
       {
         q: 'What does the website include?',
-        a: 'Every site includes a fully custom design, professional copywriting, mobile optimisation, Google Maps integration, local SEO setup, contact forms, and a speed-optimised build. Everything a local trade business needs to get found and convert visitors into calls.',
+        a: 'Every site includes a fully custom design, professional copywriting, mobile optimisation, Google Maps integration, local SEO setup, contact forms, and a speed-optimised build. Everything a local business needs to get found and convert visitors into enquiries or bookings.',
       },
     ],
   },
@@ -63,7 +63,7 @@ const categories = [
       },
       {
         q: 'What payment methods do you accept?',
-        a: 'We accept bank transfers, major credit and debit cards, and other methods as outlined in your invoice. A deposit is typically required before work begins, with the balance due on completion.',
+        a: 'We accept bank transfer, JazzCash, Easypaisa, and other methods as outlined in your invoice. A deposit is typically required before work begins, with the balance due on completion.',
       },
       {
         q: 'What if I need changes after launch?',

@@ -71,7 +71,7 @@ export default function Footer({ onNavigate }) {
               Pht<span className="text-gold">nex</span>
             </a>
             <p className="text-sm text-surface/60 leading-relaxed max-w-xs">
-              Helping US-based home services and trade businesses get found online and attract more customers in exactly 7 days.
+              Helping travel agencies, consultants, and local businesses in Pakistan get found online and attract more customers in exactly 7 days.
             </p>
             {/* Socials */}
             <div className="flex items-center gap-4 mt-8">

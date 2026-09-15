@@ -6,7 +6,7 @@ const services = [
     name: 'Professional Website',
     tagline: 'Built to convert visitors into calls and bookings.',
     description:
-      "A local business website isn't a digital brochure. It's your lead engine. We design custom, blazing-fast 5-page websites built specifically for trade businesses. Complete with clear click-to-call buttons, mobile-ready layout, and high-converting copy tailored to homeowners.",
+      "A local business website isn't a digital brochure. It's your lead engine. We design custom, blazing-fast 5-page websites built specifically for local businesses. Complete with clear click-to-call buttons, mobile-ready layout, and high-converting copy tailored to customers.",
     ideal: ['Travel agencies', 'Consultants', 'Local service businesses'],
     price: 'Delivered in 7 Days',
     popular: true,
@@ -17,7 +17,7 @@ const services = [
     name: 'Google Maps Strategy',
     tagline: 'Rank higher in local search with more reviews.',
     description:
-      "When homeowners need help fast, they search on Google and choose the one with the most reviews. We launch a custom, automated Google Maps review campaign to get your past clients to leave glowing 5-star reviews. More reviews = better visibility = more calls.",
+      "When customers need help fast, they search on Google and choose the one with the most reviews. We launch a custom, automated Google Maps review campaign to get your past clients to leave glowing 5-star reviews. More reviews = better visibility = more calls.",
     ideal: ['Local SEO growth', 'Review automation', 'Map pack ranking'],
     price: 'Included in Launch Pack',
     popular: false,
@@ -161,7 +161,7 @@ export default function Services() {
             The Three Pillars of Your<br />Complete Digital Presence
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-sm text-ink-muted max-w-md leading-relaxed">
-            We don't offer complex marketing retainers. We deliver the three exact assets local service and trade businesses need to capture local demand.
+            We don't offer complex marketing retainers. We deliver the three exact assets local service and local businesses need to capture local demand.
           </motion.p>
         </motion.div>
 

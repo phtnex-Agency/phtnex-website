@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
@@ -15,31 +15,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import FAQPage from './pages/FAQPage'
 
-export default function App() {
-  const [page, setPage] = useState('home') // 'home' | 'privacy' | 'terms' | 'faqs'
-
-  // Expose navigate for cross-page links inside sub-pages
-  useEffect(() => {
-    window._phtnexNavigate = setPage
-    return () => { delete window._phtnexNavigate }
-  }, [])
-
-  const goHome = () => {
-    setPage('home')
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }
-
-  const goContact = () => {
-    setPage('home')
-    setTimeout(() => {
-      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 80)
-  }
-
-  if (page === 'privacy') return <PrivacyPolicy onBack={goHome} onContact={goContact} />
-  if (page === 'terms')   return <TermsOfService onBack={goHome} onContact={goContact} />
-  if (page === 'faqs')    return <FAQPage onBack={goHome} onContact={goContact} />
-
+function HomePage() {
   return (
     <div className="bg-surface min-h-screen">
       <Helmet>
@@ -57,8 +33,34 @@ export default function App() {
         <Pricing />
         <ContactCTA />
       </main>
-      <Footer onNavigate={setPage} />
+      <Footer />
       <WhatsAppButton />
     </div>
+  )
+}
+
+function ContactRoute({ children: Page }) {
+  const navigate = useNavigate()
+
+  const goContact = () => {
+    navigate('/')
+    setTimeout(() => {
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 80)
+  }
+
+  return <Page onContact={goContact} />
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<ContactRoute>{PrivacyPolicy}</ContactRoute>} />
+        <Route path="/terms" element={<ContactRoute>{TermsOfService}</ContactRoute>} />
+        <Route path="/faqs" element={<ContactRoute>{FAQPage}</ContactRoute>} />
+      </Routes>
+    </BrowserRouter>
   )
 }

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const footerLinks = {
   Services: [
     { label: '5-Page Website', href: '#services' },
@@ -12,7 +14,7 @@ const footerLinks = {
     { label: 'Testimonials', href: '#testimonials' },
   ],
   Resources: [
-    { label: 'FAQs', href: '#', page: 'faqs' },
+    { label: 'FAQs', to: '/faqs' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'Contact', href: '#contact' },
   ],
@@ -52,7 +54,7 @@ const socials = [
   },
 ]
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
   const handleNavClick = (e, href) => {
     if (href === '#') return
     e.preventDefault()
@@ -95,13 +97,13 @@ export default function Footer({ onNavigate }) {
               <ul className="flex flex-col gap-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    {link.page ? (
-                      <button
-                        onClick={() => onNavigate(link.page)}
+                    {link.to ? (
+                      <Link
+                        to={link.to}
                         className="text-sm text-surface/60 hover:text-surface transition-colors duration-300"
                       >
                         {link.label}
-                      </button>
+                      </Link>
                     ) : link.href === '#' ? (
                       <span className="text-sm text-surface/40 flex items-center gap-2">
                         {link.label}
@@ -135,18 +137,18 @@ export default function Footer({ onNavigate }) {
             © 2026 Phtnex. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button
-              onClick={() => onNavigate('privacy')}
+            <Link
+              to="/privacy"
               className="text-xs text-surface/40 hover:text-surface/70 transition-colors duration-300"
             >
               Privacy Policy
-            </button>
-            <button
-              onClick={() => onNavigate('terms')}
+            </Link>
+            <Link
+              to="/terms"
               className="text-xs text-surface/40 hover:text-surface/70 transition-colors duration-300"
             >
               Terms of Service
-            </button>
+            </Link>
           </div>
         </div>
       </div>

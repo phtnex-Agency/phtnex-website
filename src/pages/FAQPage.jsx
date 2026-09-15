@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const categories = [
   {
@@ -133,7 +134,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
   )
 }
 
-export default function FAQPage({ onBack, onContact }) {
+export default function FAQPage({ onContact }) {
   const [activeCategory, setActiveCategory] = useState(0)
   const [openIndex, setOpenIndex] = useState(0)
 
@@ -159,8 +160,8 @@ export default function FAQPage({ onBack, onContact }) {
       <header className="border-b border-border bg-surface/95 backdrop-blur-md sticky top-0 z-50">
         <div className="container-main">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <button
-              onClick={onBack}
+            <Link
+              to="/"
               className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-300 group"
             >
               <svg
@@ -173,13 +174,13 @@ export default function FAQPage({ onBack, onContact }) {
                 <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Back to Home
-            </button>
-            <button
-              onClick={onBack}
+            </Link>
+            <Link
+              to="/"
               className="font-display text-xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300"
             >
               Pht<span className="text-gold">nex</span>
-            </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -316,32 +317,19 @@ export default function FAQPage({ onBack, onContact }) {
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  { label: 'View Pricing', page: 'pricing' },
-                  { label: 'See Our Work', page: 'work' },
-                  { label: 'Privacy Policy', page: 'privacy' },
-                  { label: 'Terms of Service', page: 'terms' },
-                ].map(({ label, page }) => (
-                  <button
+                  { label: 'View Pricing', to: '/#pricing' },
+                  { label: 'See Our Work', to: '/#work' },
+                  { label: 'Privacy Policy', to: '/privacy' },
+                  { label: 'Terms of Service', to: '/terms' },
+                ].map(({ label, to }) => (
+                  <Link
                     key={label}
-                    onClick={() => {
-                      if (page === 'privacy' || page === 'terms') {
-                        onBack()
-                        // slight delay so home renders before navigating
-                        setTimeout(() => {
-                          window._phtnexNavigate && window._phtnexNavigate(page)
-                        }, 50)
-                      } else {
-                        onBack()
-                        setTimeout(() => {
-                          document.querySelector(`#${page}`)?.scrollIntoView({ behavior: 'smooth' })
-                        }, 100)
-                      }
-                    }}
+                    to={to}
                     className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-300 group text-left"
                   >
                     <span className="arrow">→</span>
                     {label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -353,12 +341,12 @@ export default function FAQPage({ onBack, onContact }) {
       <div className="border-t border-border bg-surface-2">
         <div className="container-main py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-ink-muted">© 2026 Phtnex. All rights reserved.</p>
-          <button
-            onClick={onBack}
+          <Link
+            to="/"
             className="text-xs text-ink-muted hover:text-ink transition-colors duration-300 underline underline-offset-4"
           >
             ← Return to phtnex.com
-          </button>
+          </Link>
         </div>
       </div>
     </div>

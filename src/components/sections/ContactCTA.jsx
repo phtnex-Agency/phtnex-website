@@ -203,7 +203,7 @@ export default function ContactCTA() {
                 {/* Business */}
                 <div>
                   <label htmlFor="business" className="section-label text-surface/40 block mb-3">
-                    Your Gmail / Business Email
+                    Your Gmail / Business Email / Phone Number
                   </label>
                   <input
                     id="business"

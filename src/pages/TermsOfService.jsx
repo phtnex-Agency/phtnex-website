@@ -144,17 +144,7 @@ const sections = [
       { body: 'We may update these Terms of Service from time to time. Any changes will be posted on this page with a revised "Last Updated" date. Continued use of our website or services after such changes constitutes your acceptance of the revised Terms.' },
     ],
   },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-      </svg>
-    ),
-    title: '13. Contact',
-    content: [
-      { body: 'If you have any questions about these Terms of Service, please reach out to us at: hello@phtnex.com' },
-    ],
-  },
+   
 ]
 
 /* ── Animated hero visual ─────────────────────────────────────────────────── */

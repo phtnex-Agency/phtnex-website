@@ -115,17 +115,7 @@ const sections = [
       { body: 'We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this page. We encourage you to review this Policy periodically to stay informed about how we protect your information.' },
     ],
   },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-      </svg>
-    ),
-    title: '11. Contact Us',
-    content: [
-      { body: 'If you have any questions about this Privacy Policy or how we handle your personal information, please contact us at: hello@phtnex.com' },
-    ],
-  },
+
 ]
 
 /* ── Animated hero visual ─────────────────────────────────────────────────── */

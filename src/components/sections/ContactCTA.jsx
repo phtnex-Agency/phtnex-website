@@ -211,7 +211,7 @@ export default function ContactCTA() {
                     type="text"
                     value={form.business}
                     onChange={handleChange}
-                    placeholder="Ali@gmail.com"
+                    placeholder="Ali@gmail.com / +92 300 1234567"
                     className="form-input !text-surface placeholder-surface/20 border-surface/20 focus:border-surface/60 bg-transparent"
                   />
                 </div>

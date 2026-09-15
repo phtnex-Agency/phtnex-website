@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const WEB3FORMS_ACCESS_KEY = 'ead346c5-922c-46d6-a59f-5a5749c3afea'
+
 const trustPoints = [
   'Free 30-minute local strategy session',
   'Complete setup delivered in 7 days',
@@ -64,6 +66,7 @@ export default function ContactCTA() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -72,12 +75,33 @@ export default function ContactCTA() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
-    // TODO: Replace with your form endpoint (Formspree, EmailJS, etc.)
-    // Example: await fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: JSON.stringify(form) })
-    console.log('Form submitted:', form)
-    await new Promise((r) => setTimeout(r, 1000)) // Simulated delay
-    setSubmitting(false)
-    setSubmitted(true)
+    setSubmitError('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'New enquiry from phtnex.com',
+          ...form,
+        }),
+      })
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to send your enquiry.')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(error.message || 'Unable to send your enquiry. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -154,7 +178,7 @@ export default function ContactCTA() {
                 </div>
                 <h3 className="font-display text-xl text-surface">Message received.</h3>
                 <p className="text-sm text-surface/60 leading-relaxed">
-                  Thank you for reaching out. We will review your business details and follow up with your custom launch strategy within 24 hours.
+                  Thanks — we've got your details and will reach out within 24 hours.
                 </p>
               </div>
             ) : (
@@ -179,7 +203,7 @@ export default function ContactCTA() {
                 {/* Business */}
                 <div>
                   <label htmlFor="business" className="section-label text-surface/40 block mb-3">
-                    Business Name
+                    Your Gmail / Business Email
                   </label>
                   <input
                     id="business"
@@ -187,7 +211,7 @@ export default function ContactCTA() {
                     type="text"
                     value={form.business}
                     onChange={handleChange}
-                    placeholder="Ali's Consulting"
+                    placeholder="Ali@gmail.com"
                     className="form-input !text-surface placeholder-surface/20 border-surface/20 focus:border-surface/60 bg-transparent"
                   />
                 </div>
@@ -263,6 +287,11 @@ export default function ContactCTA() {
                 >
                   {submitting ? 'Sending...' : 'Get Your 7-Day Launch Plan →'}
                 </button>
+                {submitError && (
+                  <p role="alert" className="text-sm text-red-300 leading-relaxed">
+                    {submitError}
+                  </p>
+                )}
               </form>
             )}
             </div>

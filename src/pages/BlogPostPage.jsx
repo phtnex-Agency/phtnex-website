@@ -42,7 +42,7 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
       name: 'Phtnex',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.phtnex.com/favicon.svg',
+        url: 'https://www.phtnex.com/apple-touch-icon.png',
       },
     },
     mainEntityOfPage: {

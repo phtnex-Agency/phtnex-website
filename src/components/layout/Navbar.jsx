@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { label: 'Work', href: '#work' },
@@ -6,11 +7,14 @@ const navLinks = [
   { label: 'Why Us', href: '#why-us' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Pricing', href: '#pricing' },
+  { label: 'Blog', to: '/blog' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -23,14 +27,22 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault()
+  const handleNavClick = (e, link) => {
     setMenuOpen(false)
-    const target = document.querySelector(href)
-    if (target) {
+    if (link.to) return // Let Link handle React Router navigation
+
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/')
       setTimeout(() => {
+        const target = document.querySelector(link.href)
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    } else {
+      const target = document.querySelector(link.href)
+      if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 50)
+      }
     }
   }
 
@@ -46,34 +58,44 @@ export default function Navbar() {
         <div className="container-main">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a
-              href="#"
-              onClick={(e) => handleNavClick(e, 'body')}
+            <Link
+              to="/"
               className="font-display text-2xl lg:text-3xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300"
               aria-label="Phtnex Home"
             >
               Pht<span className="text-gold">nex</span>
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.to ? (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
+                    className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center">
               <a
                 href="#contact"
-                onClick={(e) => handleNavClick(e, '#contact')}
+                onClick={(e) => handleNavClick(e, { href: '#contact' })}
                 className="btn-primary text-xs tracking-widest uppercase px-5 py-2.5"
               >
                 Book a Call
@@ -102,23 +124,37 @@ export default function Navbar() {
       >
         <div className="container-main flex flex-col h-full pt-24 pb-12">
           <nav className="flex flex-col gap-1 flex-1">
-            {navLinks.map((link, i) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`font-display text-4xl font-medium text-ink py-3 border-b border-border hover:pl-3 transition-all duration-300 ${
-                  menuOpen ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link, i) =>
+              link.to ? (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setMenuOpen(false)}
+                  className={`font-display text-4xl font-medium text-ink py-3 border-b border-border hover:pl-3 transition-all duration-300 ${
+                    menuOpen ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link)}
+                  className={`font-display text-4xl font-medium text-ink py-3 border-b border-border hover:pl-3 transition-all duration-300 ${
+                    menuOpen ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
           <a
             href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
+            onClick={(e) => handleNavClick(e, { href: '#contact' })}
             className="btn-primary text-center mt-8 py-4 text-sm tracking-widest uppercase"
           >
             Book a Free Discovery Call

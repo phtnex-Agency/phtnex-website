@@ -1,21 +1,60 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { blogPosts } from './src/data/blogPosts.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const routesToPrerender = [
-  '/',
-  '/privacy',
-  '/terms',
-  '/faqs',
-  '/website-design',
-  '/google-maps-seo',
-  '/social-media-management',
+const baseRoutes = [
+  { url: '/', priority: '1.0', changefreq: 'weekly' },
+  { url: '/website-design', priority: '0.9', changefreq: 'weekly' },
+  { url: '/google-maps-seo', priority: '0.9', changefreq: 'weekly' },
+  { url: '/social-media-management', priority: '0.9', changefreq: 'weekly' },
+  { url: '/blog', priority: '0.8', changefreq: 'daily' },
+  { url: '/faqs', priority: '0.8', changefreq: 'monthly' },
+  { url: '/privacy', priority: '0.5', changefreq: 'monthly' },
+  { url: '/terms', priority: '0.5', changefreq: 'monthly' },
 ]
 
+const postRoutes = blogPosts.map((post) => ({
+  url: `/blog/${post.slug}`,
+  priority: '0.8',
+  changefreq: 'weekly',
+}))
+
+const allRoutes = [...baseRoutes, ...postRoutes]
+const routesToPrerender = allRoutes.map((r) => r.url)
+
+function generateSitemap() {
+  const today = new Date().toISOString().split('T')[0]
+  const xmlEntries = allRoutes.map(
+    (r) => `  <url>
+    <loc>https://www.phtnex.com${r.url === '/' ? '/' : r.url}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`
+  )
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${xmlEntries.join('\n')}
+</urlset>
+`
+
+  // Write to public/ and dist/
+  fs.writeFileSync(path.resolve(__dirname, 'public/sitemap.xml'), sitemapXml, 'utf-8')
+  if (fs.existsSync(path.resolve(__dirname, 'dist'))) {
+    fs.writeFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), sitemapXml, 'utf-8')
+  }
+  console.log(`[sitemap] Dynamically generated sitemap.xml with ${allRoutes.length} URLs.`)
+}
+
 async function prerender() {
+  // Generate sitemap first
+  generateSitemap()
+
   const templatePath = path.resolve(__dirname, 'dist/index.html')
   const template = fs.readFileSync(templatePath, 'utf-8')
 
@@ -54,9 +93,8 @@ async function prerender() {
       }
     }
 
-    const targetDir = url === '/'
-      ? path.resolve(__dirname, 'dist')
-      : path.resolve(__dirname, `dist${url}`)
+    const targetDir =
+      url === '/' ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, `dist${url}`)
 
     if (!fs.existsSync(targetDir)) {
       fs.mkdirSync(targetDir, { recursive: true })

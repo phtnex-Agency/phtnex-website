@@ -17,6 +17,8 @@ import FAQPage from './pages/FAQPage'
 import WebsiteDesignPage from './pages/WebsiteDesignPage'
 import GoogleMapsSEOPage from './pages/GoogleMapsSEOPage'
 import SocialMediaPage from './pages/SocialMediaPage'
+import BlogListPage from './pages/BlogListPage'
+import BlogPostPage from './pages/BlogPostPage'
 
 function HomePage() {
   return (
@@ -66,6 +68,8 @@ export function AppRoutes() {
       <Route path="/website-design" element={<ContactRoute>{WebsiteDesignPage}</ContactRoute>} />
       <Route path="/google-maps-seo" element={<ContactRoute>{GoogleMapsSEOPage}</ContactRoute>} />
       <Route path="/social-media-management" element={<ContactRoute>{SocialMediaPage}</ContactRoute>} />
+      <Route path="/blog" element={<ContactRoute>{BlogListPage}</ContactRoute>} />
+      <Route path="/blog/:slug" element={<ContactRoute>{BlogPostPage}</ContactRoute>} />
     </Routes>
   )
 }

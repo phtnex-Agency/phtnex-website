@@ -147,7 +147,20 @@ export default function FAQPage({ onContact }) {
     setOpenIndex(0)
   }
 
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i)
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: categories.flatMap((cat) =>
+      cat.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
+        },
+      }))
+    ),
+  }
 
   return (
     <div className="min-h-screen bg-surface">
@@ -155,6 +168,7 @@ export default function FAQPage({ onContact }) {
         <title>Frequently Asked Questions | Phtnex</title>
         <meta name="description" content="Have questions about our web design process, 7-day launch, pricing, or support? Find all the answers you need in the Phtnex FAQ." />
         <link rel="canonical" href="https://www.phtnex.com/faqs" />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       {/* ── Sticky top bar ── */}

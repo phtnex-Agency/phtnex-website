@@ -5,7 +5,15 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const routesToPrerender = ['/', '/privacy', '/terms', '/faqs']
+const routesToPrerender = [
+  '/',
+  '/privacy',
+  '/terms',
+  '/faqs',
+  '/website-design',
+  '/google-maps-seo',
+  '/social-media-management',
+]
 
 async function prerender() {
   const templatePath = path.resolve(__dirname, 'dist/index.html')

@@ -14,12 +14,15 @@ import WhatsAppButton from './components/ui/WhatsAppButton'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import FAQPage from './pages/FAQPage'
+import WebsiteDesignPage from './pages/WebsiteDesignPage'
+import GoogleMapsSEOPage from './pages/GoogleMapsSEOPage'
+import SocialMediaPage from './pages/SocialMediaPage'
 
 function HomePage() {
   return (
     <div className="bg-surface min-h-screen">
       <Helmet>
-        <title>Phtnex — Local SEO & Web Design for Growing Businesses</title>
+        <title>Phtnex — Web Design &amp; Google Maps SEO for Small Business</title>
         <meta name="description" content="We build high-converting websites, manage Google Maps reviews, and optimize local SEO for travel agencies, consultants, and trade businesses worldwide. 7-Day Launch." />
         <link rel="canonical" href="https://www.phtnex.com/" />
       </Helmet>
@@ -60,6 +63,9 @@ export function AppRoutes() {
       <Route path="/privacy" element={<ContactRoute>{PrivacyPolicy}</ContactRoute>} />
       <Route path="/terms" element={<ContactRoute>{TermsOfService}</ContactRoute>} />
       <Route path="/faqs" element={<ContactRoute>{FAQPage}</ContactRoute>} />
+      <Route path="/website-design" element={<ContactRoute>{WebsiteDesignPage}</ContactRoute>} />
+      <Route path="/google-maps-seo" element={<ContactRoute>{GoogleMapsSEOPage}</ContactRoute>} />
+      <Route path="/social-media-management" element={<ContactRoute>{SocialMediaPage}</ContactRoute>} />
     </Routes>
   )
 }

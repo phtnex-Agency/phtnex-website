@@ -19,8 +19,8 @@ function HomePage() {
   return (
     <div className="bg-surface min-h-screen">
       <Helmet>
-        <title>Phtnex — Local SEO & Web Design for Trades in Pakistan</title>
-        <meta name="description" content="We build high-converting websites, manage Google Maps reviews, and optimize local SEO for travel agencies, consultants, and trade businesses across Pakistan. 7-Day Launch." />
+        <title>Phtnex — Local SEO & Web Design for Growing Businesses</title>
+        <meta name="description" content="We build high-converting websites, manage Google Maps reviews, and optimize local SEO for travel agencies, consultants, and trade businesses worldwide. 7-Day Launch." />
       </Helmet>
       <Navbar />
       <main>

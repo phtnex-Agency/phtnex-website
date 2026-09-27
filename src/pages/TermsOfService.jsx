@@ -24,7 +24,7 @@ const sections = [
     ),
     title: '2. Services',
     content: [
-      { body: 'Phtnex provides website design, development, local SEO, and digital presence services primarily for travel agencies, consultants, and local businesses in Pakistan. The specific scope, deliverables, timeline, and pricing for each engagement are agreed upon prior to commencement and confirmed in a separate project agreement or invoice.' },
+      { body: 'Phtnex provides website design, development, local SEO, and digital presence services for travel agencies, consultants, and businesses worldwide. The specific scope, deliverables, timeline, and pricing for each engagement are agreed upon prior to commencement and confirmed in a separate project agreement or invoice.' },
       { body: 'We reserve the right to modify, suspend, or discontinue any aspect of our services at any time without prior notice, although we will always endeavour to communicate significant changes to active clients.' },
     ],
   },
@@ -131,7 +131,7 @@ const sections = [
     ),
     title: '11. Governing Law',
     content: [
-      { body: 'These Terms shall be governed by and construed in accordance with the laws of Pakistan. Any disputes arising from these Terms or our services shall be resolved through good-faith negotiation before pursuing any formal legal remedy.' },
+      { body: 'These Terms shall be governed by and construed in accordance with the applicable laws identified in your project agreement. Any disputes arising from these Terms or our services shall be resolved through good-faith negotiation before pursuing any formal legal remedy.' },
     ],
   },
   {
@@ -238,7 +238,7 @@ function TermsHeroVisual() {
       {[
         { label: 'No Lock-in', icon: '🔓', top: '10%', left: '5%', delay: 0.6 },
         { label: 'Fair Terms', icon: '⚖️', bottom: '12%', right: '8%', delay: 0.8 },
-        { label: 'Pakistan Law', icon: '🇺🇸', top: '60%', left: '3%', delay: 1.0 },
+        { label: 'Applicable Law', icon: '⚖️', top: '60%', left: '3%', delay: 1.0 },
       ].map((chip) => (
         <motion.div
           key={chip.label}

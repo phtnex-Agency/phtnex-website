@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What types of businesses do you work with?',
-    a: "We specialise in travel agencies, consultants, and local service businesses across Pakistan. If you're a business that depends on local customers finding you, we're a great fit.",
+    a: "We specialise in travel agencies, consultants, and local service businesses worldwide. If you're a business that depends on customers finding you, we're a great fit.",
   },
   {
     q: 'Is there a contract or long-term commitment?',

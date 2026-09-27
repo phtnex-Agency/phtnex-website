@@ -2,18 +2,16 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    initials: 'WH',
-    name: 'Wajid H.',
+    initials: 'JR',
+    name: 'John R.',
     role: 'Owner, Visa & Immigration Services',
-    location: 'Karachi, Pakistan',
     quote:
       'I had no idea how many jobs I was losing because my website was broken. Phtnex rebuilt everything in a week, launched a custom review strategy that got us 45 glowing reviews, and now the phone doesn\'t stop ringing.',
   },
   {
     initials: 'JS',
-    name: 'Jawad S.',
+    name: 'Jane S.',
     role: 'Co-founder, Apex Consulting',
-    location: 'Lahore, Pakistan',
     quote:
       'The Google review strategy alone doubled our ranking in local search. Homeowners call us directly because we have the most reviews in our area. The 7-day launch was seamless and highly professional.',
   },
@@ -21,15 +19,13 @@ const testimonials = [
     initials: 'SA',
     name: 'Sarah A.',
     role: 'Founder, Tex Cleaners',
-    location: 'Karachi, Pakistan',
     quote:
       'Having a premium professional site and a polished LinkedIn presence completely changed how commercial buyers see us. We have already secured three recurring commercial contracts. Outstanding work!',
   },
   {
     initials: 'AK',
-    name: 'Ali K.',
+    name: 'Alex K.',
     role: 'Owner, Sparky Fly Electrical',
-    location: 'Peshawar, Pakistan',
     quote:
       'Fast, honest, and exactly what trade businesses need. They speak our language — no complex marketing jargon, just a solid website that converts traffic and gets us found on Google. Highly recommend.',
   },
@@ -81,7 +77,7 @@ function TestimonialCard({ testimonial }) {
         <div>
           <p className="text-sm font-semibold text-ink">{testimonial.name}</p>
           <p className="text-xs text-ink-muted mt-0.5">
-            {testimonial.role} · {testimonial.location}
+            {testimonial.role}
           </p>
         </div>
       </div>

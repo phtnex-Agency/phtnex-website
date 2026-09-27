@@ -11,30 +11,34 @@ const trustPoints = [
 ]
 
 const serviceOptions = [
-  'The 7-Day Complete Launch (₹46,000)',
-  'Website Setup (₹35,000)',
-  'Ongoing Content & Social (₹15,000/mo)',
+  'The 7-Day Complete Launch ($140)',
+  'Website Setup ($270)',
+  'Ongoing Content & Social ($150/mo)',
   'Not sure / Custom Inquiry',
 ]
 
 const tradeOptions = [
   'Travel Agencies & Tour Operators',
-  'Immigration Consultants',
-  'Tax & Financial Consultants',
-  'Business Consultants',
-  'Legal Consultants',
-  'Real Estate Agents',
+  'Immigration & Visa Consultants',
+  'Tax & Financial Services',
+  'Business Consulting Firms',
+  'Law Firms & Legal Services',
+  'Real Estate Agencies & Agents',
   'Wedding & Event Planners',
-  'Clinics & Dental Practices',
-  'Salons & Beauty Studios',
-  'Gyms & Fitness Trainers',
-  'Auto Workshops & Detailing',
-  'Educational Academies & Tutors',
-  'Interior Designers',
-  'Photographers & Videographers',
+  'Medical Clinics & Dental Practices',
+  'Salons & Beauty Businesses',
+  'Gyms, Fitness Centers & Trainers',
+  'Auto Repair & Detailing Businesses',
+  'Educational Institutions & Tutors',
+  'Interior Design Firms',
+  'Photography & Videography Businesses',
   'Restaurants & Cafés',
+  'E-commerce & Online Businesses',
+  'Marketing & Creative Agencies',
+  'Home Services & Contractors',
+  'Technology & Software Businesses',
   'Other',
-]
+];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -211,7 +215,7 @@ export default function ContactCTA() {
                     type="text"
                     value={form.business}
                     onChange={handleChange}
-                    placeholder="Ali@gmail.com / +92 300 1234567"
+                    placeholder="you@company.com / +1 (555) 123-4567"
                     className="form-input !text-surface placeholder-surface/20 border-surface/20 focus:border-surface/60 bg-transparent"
                   />
                 </div>

@@ -23,7 +23,7 @@ const footerLinks = {
 const socials = [
   {
     label: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/company/phtnex/',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -34,7 +34,7 @@ const socials = [
   },
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/phtnex?stkn=MzR4YTdlN3I5MG4y&utm_source=qr',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -44,11 +44,11 @@ const socials = [
     ),
   },
   {
-    label: 'Twitter',
-    href: '#',
+    label: 'Facebook',
+    href: 'https://www.facebook.com/share/196bu2MsPs/?mibextid=wwXIfr',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+        <path d="M14 8h2V4h-2c-2.8 0-5 2.2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.6.4-1 1-1z"/>
       </svg>
     ),
   },
@@ -73,7 +73,7 @@ export default function Footer() {
               Pht<span className="text-gold">nex</span>
             </a>
             <p className="text-sm text-surface/60 leading-relaxed max-w-xs">
-              Helping travel agencies, consultants, and local businesses in Pakistan get found online and attract more customers in exactly 7 days.
+              Helping travel agencies, consultants, and local businesses worldwide get found online and attract more customers in exactly 7 days.
             </p>
             {/* Socials */}
             <div className="flex items-center gap-4 mt-8">
@@ -81,6 +81,8 @@ export default function Footer() {
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={s.label}
                   className="w-9 h-9 flex items-center justify-center border border-surface/20 text-surface/50 hover:text-surface hover:border-surface/50 transition-all duration-300"
                 >

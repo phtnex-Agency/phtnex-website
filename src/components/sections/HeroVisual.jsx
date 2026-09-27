@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
  */
 export default function HeroVisual() {
   const [typed, setTyped] = useState('')
-  const fullText = 'travel agency lahore'
+  const fullText = 'travel agency worldwide'
 
   /* Typing / deleting loop */
   useEffect(() => {
@@ -182,7 +182,7 @@ export default function HeroVisual() {
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#0A0A0A', marginBottom: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   Al-Safa Travel Agency
                 </div>
-                <div style={{ fontSize: 9, color: '#C9A96E', marginBottom: 5 }}>alsafatravel.pk · Lahore, PK</div>
+                <div style={{ fontSize: 9, color: '#C9A96E', marginBottom: 5 }}>yourbusiness.com · Worldwide</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 1.5, marginBottom: 5 }}>
                   {[1, 2, 3, 4, 5].map(s => (
                     <motion.span
@@ -196,7 +196,7 @@ export default function HeroVisual() {
                   <span style={{ fontSize: 9, color: '#9A9A9A', marginLeft: 3 }}>5.0 (48 reviews)</span>
                 </div>
                 <div style={{ fontSize: 9, color: '#6B6B6B', lineHeight: 1.45 }}>
-                  Trusted for Hajj, Umrah & international tours across Pakistan.
+                  Trusted for travel planning and international tours worldwide.
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const plans = [
   {
     name: 'Website Setup',
-    price: '₹35,000',
+    price: '$140',
     scope: 'Guaranteed 7-day launch · 5-Page Site',
     popular: false,
     features: [
@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: 'The 7-Day Complete Launch',
-    price: '₹46,000',
+    price: '$270',
     scope: 'Full Digital Footprint · Most Popular',
     popular: true,
     features: [
@@ -34,7 +34,7 @@ const plans = [
   },
   {
     name: 'Ongoing Content & Social',
-    price: '₹15,000',
+    price: '$150/mo',
     scope: 'Cancel anytime',
     popular: false,
     features: [

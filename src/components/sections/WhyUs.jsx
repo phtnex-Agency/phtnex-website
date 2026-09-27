@@ -167,7 +167,7 @@ export default function WhyUs() {
               variants={fadeInUp}
               className="text-sm text-ink-muted max-w-xl leading-relaxed"
             >
-              We bridge the gap for travel agencies, consultants, and local businesses across Pakistan who are excellent at what they do but have no time or expertise to build a proper online presence.
+              We bridge the gap for travel agencies, consultants, and local businesses worldwide who are excellent at what they do but have no time or expertise to build a proper online presence.
             </motion.p>
           </motion.div>
 

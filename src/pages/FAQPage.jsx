@@ -17,7 +17,7 @@ const categories = [
       },
       {
         q: 'What types of businesses do you work with?',
-        a: "We specialise in travel agencies, consultants, and local service businesses across Pakistan. If you're a business that depends on local customers finding you, we're a great fit.",
+        a: "We specialise in travel agencies, consultants, and local service businesses worldwide. If you're a business that depends on customers finding you, we're a great fit.",
       },
     ],
   },
@@ -64,7 +64,7 @@ const categories = [
       },
       {
         q: 'What payment methods do you accept?',
-        a: 'We accept bank transfer, JazzCash, Easypaisa, and other methods as outlined in your invoice. A deposit is typically required before work begins, with the balance due on completion.',
+          a: 'We accept bank transfer, card payments, and other methods as outlined in your invoice. A deposit is typically required before work begins, with the balance due on completion.',
       },
       {
         q: 'What if I need changes after launch?',
@@ -301,7 +301,7 @@ export default function FAQPage({ onContact }) {
                 {[
                   '✓  No long-term contracts',
                   '✓  Live in exactly 7 days',
-                  '✓  US home services specialists',
+                  '✓  Local search specialists',
                 ].map((item) => (
                   <p key={item} className="text-xs text-surface/50 font-medium tracking-wide">
                     {item}

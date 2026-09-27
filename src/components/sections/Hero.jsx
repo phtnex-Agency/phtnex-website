@@ -119,7 +119,7 @@ export default function Hero() {
             {/* Eyebrow label */}
             <motion.div variants={itemVariants} className="flex items-center gap-3 mb-10">
               <span className="section-label">
-                7-DAY DIGITAL LAUNCH · FOR PAKISTANI AGENCIES &amp; CONSULTANTS
+                7-DAY DIGITAL LAUNCH · FOR US &amp; INTERNATIONAL BUSINESSES
               </span>
               <span className="block w-8 h-px bg-ink-muted" aria-hidden="true" />
             </motion.div>
@@ -141,7 +141,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg lg:text-xl text-ink-muted leading-relaxed max-w-xl mb-10 text-balance"
             >
-              We build websites, Google Maps visibility, and social presence for travel agencies, consultants, and growing businesses across Pakistan.
+              We build websites, Google Maps visibility, and social presence for travel agencies, consultants, and growing businesses worldwide.
               — so the customers already looking for you can actually find you.
             </motion.p>
 
@@ -165,7 +165,7 @@ export default function Hero() {
 
             {/* Trust micro-copy */}
             <motion.p variants={itemVariants} className="text-xs text-ink-light mb-14">
-              Guaranteed 7-day launch · Custom design for travel agencies, consultants, and local businesses in Pakistan · Phone-call optimized
+              Guaranteed 7-day launch · Custom design for travel agencies, consultants, and local businesses worldwide · Phone-call optimized
             </motion.p>
 
             {/* Divider */}

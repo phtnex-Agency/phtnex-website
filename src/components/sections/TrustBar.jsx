@@ -24,7 +24,7 @@ export default function TrustBar() {
     <section className="section-py-sm border-y border-border bg-surface-2" aria-label="Trusted by">
       <div className="container-main mb-8">
         <p className="section-label text-center">
-          HELPING PAKISTANI AGENCIES &amp; CONSULTANTS DOMINATE LOCAL SEARCH
+          HELPING US &amp; INTERNATIONAL AGENCIES AND CONSULTANTS GROW THROUGH LOCAL SEARCH
         </p>
       </div>
 

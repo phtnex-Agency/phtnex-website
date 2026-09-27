@@ -20,7 +20,7 @@ function BackgroundTexture() {
 const caseStudies = [
   {
     number: '01',
-    tags: ['TRAVEL AGENCY', 'LAHORE, PAKISTAN', 'COMPLETE LAUNCH'],
+    tags: ['TRAVEL AGENCY', 'INTERNATIONAL CLIENT', 'COMPLETE LAUNCH'],
     headline: 'Turning a Walk-In Travel Agency Into a Searchable, Bookable Business',
     description:
       "Many travel agencies here run entirely on word-of-mouth and a WhatsApp number. Here, we build a clean, mobile-first site around package listings and a one-tap WhatsApp enquiry — the kind of site that turns a browser into a booking before you ever answer the phone.",
@@ -28,7 +28,7 @@ const caseStudies = [
   },
   {
     number: '02',
-    tags: ['CONSULTANT', 'KARACHI, PAKISTAN', 'Website Only'],
+    tags: ['CONSULTANT', 'GLOBAL BUSINESS', 'Website Only'],
     headline: 'Giving a Consultant a Credible First Impression Online',
     description:
       'A consultant with real expertise but no web presence loses trust before the first call happens. Here, we build a clear services and credentials page with a simple, low-friction way to book a consultation — the kind of site that does the convincing before you ever pick up the phone.',
@@ -36,7 +36,7 @@ const caseStudies = [
   },
   {
     number: '03',
-    tags: ['CONSULTANT', 'ISLAMABAD, PAKISTAN', 'COMPLETE DIGITAL PRESENCE'],
+    tags: ['CONSULTANT', 'INTERNATIONAL CLIENT', 'COMPLETE DIGITAL PRESENCE'],
     headline: 'Helping an Immigration Consultant Get Found Before the Competition',
     description:
       'Immigration and visa consultants are one of the most heavily searched categories on Google Maps. Here, we build a trust-first site with clear service breakdowns, optimize their Google Business Profile to match what people actually search for, and keep it active with a monthly content plan.',
@@ -137,7 +137,7 @@ export default function FeaturedWork() {
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-sm text-ink-muted max-w-sm lg:text-right leading-relaxed">
               We focus on what matters: phone calls, local search visibility, and trust. 
-              Here's the kind of work we take on for Pakistani travel agencies and consultants.
+              Here's the kind of work we take on for travel agencies and consultants around the world.
             </motion.p>
           </div>
         </motion.div>

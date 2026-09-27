@@ -49,7 +49,7 @@ export default function Navbar() {
             <a
               href="#"
               onClick={(e) => handleNavClick(e, 'body')}
-              className="font-display text-xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300"
+              className="font-display text-2xl lg:text-3xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300"
               aria-label="Phtnex Home"
             >
               Pht<span className="text-gold">nex</span>

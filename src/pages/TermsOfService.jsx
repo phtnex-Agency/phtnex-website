@@ -309,6 +309,7 @@ export default function TermsOfService({ onContact }) {
       <Helmet>
         <title>Terms of Service | Phtnex</title>
         <meta name="description" content="Read the Phtnex Terms of Service to understand the rules, guidelines, and agreements for using our web design and local SEO services." />
+        <link rel="canonical" href="https://www.phtnex.com/terms" />
       </Helmet>
 
       {/* ── Sticky top bar ── */}

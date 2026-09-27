@@ -248,6 +248,7 @@ export default function PrivacyPolicy({ onContact }) {
       <Helmet>
         <title>Privacy Policy | Phtnex</title>
         <meta name="description" content="Read the Phtnex Privacy Policy to learn how we collect, use, and protect your personal data when you use our website and services." />
+        <link rel="canonical" href="https://www.phtnex.com/privacy" />
       </Helmet>
 
       {/* ── Sticky top bar ── */}

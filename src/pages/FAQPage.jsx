@@ -154,6 +154,7 @@ export default function FAQPage({ onContact }) {
       <Helmet>
         <title>Frequently Asked Questions | Phtnex</title>
         <meta name="description" content="Have questions about our web design process, 7-day launch, pricing, or support? Find all the answers you need in the Phtnex FAQ." />
+        <link rel="canonical" href="https://www.phtnex.com/faqs" />
       </Helmet>
 
       {/* ── Sticky top bar ── */}

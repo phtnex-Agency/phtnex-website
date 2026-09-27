@@ -21,6 +21,7 @@ function HomePage() {
       <Helmet>
         <title>Phtnex — Local SEO & Web Design for Growing Businesses</title>
         <meta name="description" content="We build high-converting websites, manage Google Maps reviews, and optimize local SEO for travel agencies, consultants, and trade businesses worldwide. 7-Day Launch." />
+        <link rel="canonical" href="https://www.phtnex.com/" />
       </Helmet>
       <Navbar />
       <main>
@@ -52,15 +53,21 @@ function ContactRoute({ children: Page }) {
   return <Page onContact={goContact} />
 }
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/privacy" element={<ContactRoute>{PrivacyPolicy}</ContactRoute>} />
+      <Route path="/terms" element={<ContactRoute>{TermsOfService}</ContactRoute>} />
+      <Route path="/faqs" element={<ContactRoute>{FAQPage}</ContactRoute>} />
+    </Routes>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/privacy" element={<ContactRoute>{PrivacyPolicy}</ContactRoute>} />
-        <Route path="/terms" element={<ContactRoute>{TermsOfService}</ContactRoute>} />
-        <Route path="/faqs" element={<ContactRoute>{FAQPage}</ContactRoute>} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   )
 }

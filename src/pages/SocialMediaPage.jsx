@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/layout/Navbar'
 
 export default function SocialMediaPage({ onContact }) {
   useEffect(() => {
@@ -19,28 +19,11 @@ export default function SocialMediaPage({ onContact }) {
         <link rel="canonical" href="https://www.phtnex.com/social-media-management" />
       </Helmet>
 
-      {/* Sticky Top Header */}
-      <header className="border-b border-border bg-surface/95 backdrop-blur-md sticky top-0 z-50">
-        <div className="container-main">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-300 group"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:-translate-x-1">
-                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Back to Home
-            </Link>
-            <Link to="/" className="font-display text-xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300">
-              Pht<span className="text-gold">nex</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Navbar */}
+      <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-ink py-20 lg:py-28 relative overflow-hidden">
+      <section className="bg-ink pt-28 pb-20 lg:pt-36 lg:pb-28 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-5 z-0"
           style={{
@@ -59,7 +42,7 @@ export default function SocialMediaPage({ onContact }) {
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <button onClick={onContact} className="btn-primary text-xs uppercase tracking-widest px-8 py-4">
-                Start Ongoing Content ($150/mo) →
+                Start Monthly Plan ($150/mo) →
               </button>
               <Link to="/website-design" className="text-sm text-surface/80 hover:text-gold transition-colors font-medium">
                 Explore Website Design →

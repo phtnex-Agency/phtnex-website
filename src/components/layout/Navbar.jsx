@@ -15,8 +15,10 @@ export default function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const isSubpage = location.pathname !== '/'
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -47,9 +49,9 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || servicesDropdown
-            ? 'bg-surface/98 backdrop-blur-md border-b border-border shadow-sm'
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+          isSubpage || scrolled || servicesDropdown
+            ? 'bg-surface border-b border-border shadow-sm'
             : 'bg-transparent'
         }`}
       >

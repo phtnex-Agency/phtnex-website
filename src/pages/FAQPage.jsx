@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/layout/Navbar'
 
 const categories = [
   {
@@ -171,37 +172,11 @@ export default function FAQPage({ onContact }) {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      {/* ── Sticky top bar ── */}
-      <header className="border-b border-border bg-surface/95 backdrop-blur-md sticky top-0 z-50">
-        <div className="container-main">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-300 group"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                className="transition-transform duration-300 group-hover:-translate-x-1"
-              >
-                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Back to Home
-            </Link>
-            <Link
-              to="/"
-              className="font-display text-xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300"
-            >
-              Pht<span className="text-gold">nex</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Navbar */}
+      <Navbar />
 
       {/* Hero */}
-      <div className="bg-ink text-surface py-20 lg:py-28">
+      <div className="bg-ink text-surface pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div className="container-main">
           <motion.p
             initial={{ opacity: 0, y: 16 }}

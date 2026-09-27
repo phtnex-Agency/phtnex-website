@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link, useParams } from 'react-router-dom'
+import Navbar from '../components/layout/Navbar'
 import { blogPosts } from '../data/blogPosts'
 
 export default function BlogPostPage({ slug: propSlug, onContact }) {
@@ -15,7 +16,8 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-surface flex flex-col justify-center items-center text-center p-6">
+      <div className="min-h-screen bg-surface flex flex-col justify-center items-center text-center p-6 pt-24">
+        <Navbar />
         <h1 className="font-display text-4xl text-ink mb-4">Post Not Found</h1>
         <p className="text-sm text-ink-muted mb-6">The blog article you are looking for does not exist.</p>
         <Link to="/blog" className="btn-primary px-6 py-3 text-xs uppercase tracking-widest">
@@ -58,28 +60,11 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
       </Helmet>
 
-      {/* Sticky Top Header */}
-      <header className="border-b border-border bg-surface/95 backdrop-blur-md sticky top-0 z-50">
-        <div className="container-main">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link
-              to="/blog"
-              className="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-300 group"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:-translate-x-1">
-                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Back to Blog
-            </Link>
-            <Link to="/" className="font-display text-xl font-semibold text-ink tracking-tight hover:opacity-70 transition-opacity duration-300">
-              Pht<span className="text-gold">nex</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Shared Navbar */}
+      <Navbar />
 
       {/* Hero Title Header */}
-      <section className="bg-ink py-16 lg:py-24 relative overflow-hidden">
+      <section className="bg-ink pt-28 pb-16 lg:pt-36 lg:pb-24 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-5 z-0"
           style={{
@@ -88,7 +73,13 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
           }}
         />
         <div className="container-main relative z-10 max-w-3xl">
-          <span className="text-xs text-gold font-semibold uppercase tracking-widest block mb-4">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-xs text-gold/80 hover:text-gold uppercase tracking-widest font-semibold mb-6 transition-colors"
+          >
+            ← Back to All Articles
+          </Link>
+          <span className="text-xs text-surface/50 font-medium block mb-3">
             Published · {post.date}
           </span>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-surface leading-tight mb-6">

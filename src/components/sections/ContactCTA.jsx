@@ -4,10 +4,16 @@ import { motion } from 'framer-motion'
 const WEB3FORMS_ACCESS_KEY = 'ead346c5-922c-46d6-a59f-5a5749c3afea'
 
 const trustPoints = [
-  'Free 30-minute local strategy session',
+  'Free 30-minute strategy call',
   'Complete setup delivered in 7 days',
   'No monthly retainers or hidden fees',
-  'Honest local SEO and review advice',
+  'Clear, honest recommendations',
+]
+
+const callSteps = [
+  { number: '01', title: 'Share your goals', detail: 'Tell us what you want to improve.' },
+  { number: '02', title: 'Get a clear plan', detail: 'We map the best next steps together.' },
+  { number: '03', title: 'Move forward', detail: 'Start only when the fit feels right.' },
 ]
 
 const serviceOptions = [
@@ -60,6 +66,43 @@ const staggerContainer = {
   viewport: { once: true, margin: '-100px' },
 }
 
+function BookingBackgroundVisual() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div className="absolute -right-20 top-1/2 h-[560px] w-[720px] -translate-y-1/2 rotate-[-8deg] border border-surface/[0.06] bg-surface/[0.015] p-5 opacity-70">
+        <div className="h-full border border-surface/[0.05] p-6">
+          <div className="flex items-center justify-between border-b border-surface/[0.08] pb-5">
+            <span className="h-2 w-24 bg-surface/15" />
+            <div className="flex gap-2">
+              <span className="h-2 w-2 rounded-full bg-gold/50" />
+              <span className="h-2 w-2 rounded-full bg-surface/15" />
+              <span className="h-2 w-2 rounded-full bg-surface/15" />
+            </div>
+          </div>
+          <div className="grid grid-cols-7 gap-px bg-surface/[0.06] pt-5">
+            {Array.from({ length: 35 }, (_, index) => (
+              <span
+                key={index}
+                className={`h-16 bg-ink ${index === 17 ? 'relative after:absolute after:left-1/2 after:top-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-gold/60' : ''}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <motion.div
+        animate={{ x: ['-10%', '110%'], opacity: [0, 0.7, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute left-0 top-[38%] h-px w-[52%] bg-gold/35"
+      />
+      <motion.div
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+        className="absolute -bottom-40 -left-24 h-96 w-96 rounded-full border border-gold/[0.08]"
+      />
+    </div>
+  )
+}
+
 export default function ContactCTA() {
   const [form, setForm] = useState({
     name: '',
@@ -109,8 +152,9 @@ export default function ContactCTA() {
   }
 
   return (
-    <section id="contact" className="section-py bg-ink" aria-label="Contact">
-      <div className="container-main">
+    <section id="contact" className="relative section-py bg-ink overflow-hidden" aria-label="Contact">
+      <BookingBackgroundVisual />
+      <div className="container-main relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
           {/* Left — CTA Copy with staggered enter */}
@@ -121,16 +165,16 @@ export default function ContactCTA() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <span className="section-label text-surface/40">Ready to Dominate Your Local Area?</span>
+              <span className="section-label text-surface/40">Book a Strategy Call</span>
             </motion.div>
 
             <motion.h2 variants={fadeInUp} className="font-display text-4xl lg:text-5xl xl:text-6xl font-medium text-surface leading-[1.1] mb-8">
-              Let's Get Your Business<br />
-              <span className="italic text-surface/60">Fully Booked.</span>
+              Let's build a<br />
+              <span className="italic text-surface/60">stronger presence.</span>
             </motion.h2>
 
             <motion.p variants={fadeInUp} className="text-sm text-surface/60 leading-relaxed mb-12 max-w-md">
-              Your next customer is searching on Google right now. Let's make sure they find you, see your 5-star reviews, and call you instead of your competitors.
+              Bring your goals, questions, and current challenges. We'll show you where your digital presence can work harder and what a practical launch could look like.
             </motion.p>
 
             {/* Trust bullets */}
@@ -142,6 +186,28 @@ export default function ContactCTA() {
                 </motion.li>
               ))}
             </motion.ul>
+
+            <motion.div variants={fadeInUp} className="mt-14 border-t border-surface/10 pt-7 max-w-md">
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-surface/35 mb-5">
+                Your call, at a glance
+              </p>
+              <div className="flex flex-col gap-4">
+                {callSteps.map((step, index) => (
+                  <div key={step.number} className="flex items-start gap-4">
+                    <div className="flex flex-col items-center gap-2">
+                      <span className="flex h-7 w-7 items-center justify-center border border-gold/40 text-[10px] font-medium text-gold">
+                        {step.number}
+                      </span>
+                      {index < callSteps.length - 1 && <span className="h-5 w-px bg-surface/15" />}
+                    </div>
+                    <div className="pt-1">
+                      <p className="text-sm font-medium text-surface/80">{step.title}</p>
+                      <p className="mt-1 text-xs text-surface/40">{step.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Right — Form wrapper */}
@@ -167,10 +233,10 @@ export default function ContactCTA() {
 
             <div className="relative z-10">
               <p className="text-xs text-surface/40 tracking-widest uppercase mb-8">
-                Start a Conversation
+                Book Your Free Call
               </p>
               <p className="text-sm text-surface/50 mb-10 leading-relaxed">
-                Tell us about your business. We'll outline your custom 7-day launch plan within 24 hours.
+                Tell us a little about your business and we'll reply with the clearest next step within 24 hours.
               </p>
 
             {submitted ? (
@@ -180,7 +246,7 @@ export default function ContactCTA() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl text-surface">Message received.</h3>
+                <h3 className="font-display text-xl text-surface">Call request received.</h3>
                 <p className="text-sm text-surface/60 leading-relaxed">
                   Thanks — we've got your details and will reach out within 24 hours.
                 </p>

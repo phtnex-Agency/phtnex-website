@@ -17,6 +17,57 @@ function BackgroundTexture() {
   )
 }
 
+function WorkBackgroundVisual() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+      <div className="absolute -right-24 top-44 h-[560px] w-[min(72vw,860px)] rotate-[-8deg] border border-ink/[0.06] bg-white/30 p-4 shadow-[0_30px_100px_rgba(10,10,10,0.05)]">
+        <div className="h-full border border-ink/[0.05] bg-surface/70 p-5">
+          <div className="flex items-center gap-2 border-b border-ink/[0.06] pb-4">
+            <span className="h-2 w-2 rounded-full bg-gold/40" />
+            <span className="h-2 w-2 rounded-full bg-ink/10" />
+            <span className="h-2 w-2 rounded-full bg-ink/10" />
+            <span className="ml-4 h-2 w-40 bg-ink/[0.06]" />
+          </div>
+          <div className="grid grid-cols-[0.7fr_1.3fr] gap-5 pt-5">
+            <div className="border-r border-ink/[0.06] pr-5">
+              <span className="block h-2 w-24 bg-ink/10" />
+              <span className="mt-5 block h-1.5 w-32 bg-ink/[0.06]" />
+              <span className="mt-3 block h-1.5 w-24 bg-ink/[0.06]" />
+              <span className="mt-3 block h-1.5 w-28 bg-ink/[0.06]" />
+              <div className="mt-12 h-24 border border-gold/15 bg-gold/[0.04]" />
+            </div>
+            <div>
+              <div className="grid grid-cols-3 gap-3">
+                <span className="h-16 border border-ink/[0.05] bg-white/60" />
+                <span className="h-16 border border-ink/[0.05] bg-white/60" />
+                <span className="h-16 border border-ink/[0.05] bg-white/60" />
+              </div>
+              <div className="relative mt-5 h-40 border border-ink/[0.05] bg-white/50 p-5">
+                <div className="absolute inset-x-5 bottom-5 flex items-end gap-2">
+                  {[30, 52, 42, 76, 60, 92, 68].map((height, index) => (
+                    <motion.span
+                      key={index}
+                      animate={{ height: [height, height + 10, height] }}
+                      transition={{ duration: 4 + index * 0.3, repeat: Infinity, ease: 'easeInOut' }}
+                      className="flex-1 bg-gold/20"
+                      style={{ height }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <motion.div
+        animate={{ x: ['-8%', '8%', '-8%'], opacity: [0.2, 0.5, 0.2] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute left-[-8%] top-[32%] h-px w-[58%] bg-gold/20"
+      />
+    </div>
+  )
+}
+
 const caseStudies = [
   {
     number: '01',
@@ -116,6 +167,7 @@ export default function FeaturedWork() {
   return (
     <section id="work" className="relative section-py bg-surface overflow-hidden" aria-label="Featured Work">
       <BackgroundTexture />
+      <WorkBackgroundVisual />
       <div className="container-main relative z-10">
         {/* Header with reveal animation */}
         <motion.div

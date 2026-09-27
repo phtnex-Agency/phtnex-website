@@ -149,16 +149,21 @@ export default function SocialMediaPage({ onContact }) {
 
           {/* Internal Navigation Links */}
           <div className="border-t border-border pt-12 mt-12">
-            <h3 className="font-display text-xl font-medium text-ink mb-6">Explore Other Digital Services</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h3 className="font-display text-xl font-medium text-ink mb-6">Explore Package Options &amp; Services</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Link to="/pricing" className="p-6 bg-surface-2 border border-border hover:border-gold transition-colors block group">
+                <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-2">Flat-Rate Packages →</span>
+                <h4 className="font-display text-lg font-medium text-ink group-hover:text-gold transition-colors">See Our Exact Pricing</h4>
+                <p className="text-xs text-ink-muted mt-2">Transparent single flat-fee pricing starting at $140 with zero hidden retainers.</p>
+              </Link>
               <Link to="/website-design" className="p-6 bg-surface-2 border border-border hover:border-gold transition-colors block group">
-                <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-2">← Explore Service</span>
-                <h4 className="font-display text-lg font-medium text-ink group-hover:text-gold transition-colors">High-Converting Website Design</h4>
+                <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-2">Service →</span>
+                <h4 className="font-display text-lg font-medium text-ink group-hover:text-gold transition-colors">Website Design</h4>
                 <p className="text-xs text-ink-muted mt-2">Custom 5-page fast loading websites built for phone-call conversion.</p>
               </Link>
               <Link to="/google-maps-seo" className="p-6 bg-surface-2 border border-border hover:border-gold transition-colors block group">
-                <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-2">← Explore Service</span>
-                <h4 className="font-display text-lg font-medium text-ink group-hover:text-gold transition-colors">Google Maps SEO &amp; Local Pack Ranking</h4>
+                <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-2">Service →</span>
+                <h4 className="font-display text-lg font-medium text-ink group-hover:text-gold transition-colors">Google Maps SEO</h4>
                 <p className="text-xs text-ink-muted mt-2">Rank higher in local Google search results and automate client review campaigns.</p>
               </Link>
             </div>

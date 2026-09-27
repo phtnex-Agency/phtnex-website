@@ -33,6 +33,8 @@ export const blogPosts = [
       <h2>The Flat-Rate Solution: High Quality at $140</h2>
       <p>We built our <strong>$140 Website Setup Package</strong> specifically for growing travel agencies, consultants, and trade businesses. You get a complete, fast-loading 5-page website, professional copywriting, mobile responsiveness, lead form integration, and full technical SEO—delivered in guaranteed 7 days.</p>
 
+      <p>Want to compare our full packages and see transparent feature breakdowns? <a href="/pricing">See our exact flat-rate pricing &amp; package options →</a></p>
+
       <p>Stop overpaying for agency fluff or settling for broken templates. Get a modern, conversion-focused website that actually grows your business.</p>
     `,
   },

@@ -154,13 +154,12 @@ export default function Navbar() {
                 Testimonials
               </a>
 
-              <a
-                href="#pricing"
-                onClick={(e) => handleHashNav(e, '#pricing')}
+              <Link
+                to="/pricing"
                 className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
               >
                 Pricing
-              </a>
+              </Link>
 
               {/* Blog Link */}
               <Link
@@ -261,13 +260,13 @@ export default function Navbar() {
               Testimonials
             </a>
 
-            <a
-              href="#pricing"
-              onClick={(e) => handleHashNav(e, '#pricing')}
+            <Link
+              to="/pricing"
+              onClick={() => setMenuOpen(false)}
               className="font-display text-2xl font-medium text-ink py-2 border-b border-border"
             >
               Pricing
-            </a>
+            </Link>
 
             <Link
               to="/blog"

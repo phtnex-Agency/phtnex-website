@@ -11,6 +11,7 @@ const baseRoutes = [
   { url: '/website-design', priority: '0.9', changefreq: 'weekly' },
   { url: '/google-maps-seo', priority: '0.9', changefreq: 'weekly' },
   { url: '/social-media-management', priority: '0.9', changefreq: 'weekly' },
+  { url: '/pricing', priority: '0.9', changefreq: 'weekly' },
   { url: '/blog', priority: '0.8', changefreq: 'daily' },
   { url: '/faqs', priority: '0.8', changefreq: 'monthly' },
   { url: '/privacy', priority: '0.5', changefreq: 'monthly' },

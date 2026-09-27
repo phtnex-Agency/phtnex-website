@@ -138,6 +138,14 @@ export default function Navbar() {
                 </div>
               </div>
 
+              {/* Pricing Link */}
+              <Link
+                to="/pricing"
+                className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
+              >
+                Pricing
+              </Link>
+
               <a
                 href="#why-us"
                 onClick={(e) => handleHashNav(e, '#why-us')}
@@ -153,13 +161,6 @@ export default function Navbar() {
               >
                 Testimonials
               </a>
-
-              <Link
-                to="/pricing"
-                className="text-sm text-ink-muted hover:text-ink transition-colors duration-300 font-medium"
-              >
-                Pricing
-              </Link>
 
               {/* Blog Link */}
               <Link
@@ -244,6 +245,14 @@ export default function Navbar() {
               )}
             </div>
 
+            <Link
+              to="/pricing"
+              onClick={() => setMenuOpen(false)}
+              className="font-display text-2xl font-medium text-ink py-2 border-b border-border"
+            >
+              Pricing
+            </Link>
+
             <a
               href="#why-us"
               onClick={(e) => handleHashNav(e, '#why-us')}
@@ -259,14 +268,6 @@ export default function Navbar() {
             >
               Testimonials
             </a>
-
-            <Link
-              to="/pricing"
-              onClick={() => setMenuOpen(false)}
-              className="font-display text-2xl font-medium text-ink py-2 border-b border-border"
-            >
-              Pricing
-            </Link>
 
             <Link
               to="/blog"

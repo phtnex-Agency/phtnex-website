@@ -45,10 +45,14 @@ ${xmlEntries.join('\n')}
 `
 
   // Write to public/ and dist/
-  fs.writeFileSync(path.resolve(__dirname, 'public/sitemap.xml'), sitemapXml, 'utf-8')
-  if (fs.existsSync(path.resolve(__dirname, 'dist'))) {
-    fs.writeFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), sitemapXml, 'utf-8')
-  }
+  const publicDir = path.resolve(__dirname, 'public')
+  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true })
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf-8')
+
+  const distDir = path.resolve(__dirname, 'dist')
+  if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true })
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8')
+
   console.log(`[sitemap] Dynamically generated sitemap.xml with ${allRoutes.length} URLs.`)
 }
 

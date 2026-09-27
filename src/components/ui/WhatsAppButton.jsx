@@ -71,11 +71,9 @@ export default function WhatsAppButton() {
       `}</style>
 
       <div
+        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6"
         style={{
-          position: 'fixed',
-          bottom: '38px',
-          right: '32px',
-          zIndex: 9999,
+          zIndex: 99999,
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.3s ease',
           pointerEvents: visible ? 'auto' : 'none',

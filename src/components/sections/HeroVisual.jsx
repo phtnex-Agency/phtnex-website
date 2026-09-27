@@ -283,7 +283,7 @@ export default function HeroVisual() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.75, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          position: 'absolute', bottom: '6%', right: '6%', zIndex: 20,
+          position: 'absolute', bottom: '14%', right: '4%', zIndex: 20,
           background: 'white', border: '1px solid #E5E4E0', borderRadius: 14,
           padding: '10px 14px',
           boxShadow: '0 12px 48px rgba(0,0,0,0.1)',

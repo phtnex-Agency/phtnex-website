@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const services = [
   {
@@ -11,17 +12,19 @@ const services = [
     price: 'Delivered in 7 Days',
     popular: true,
     cta: 'Get Your Professional Website',
+    to: '/website-design',
   },
   {
-    symbol: '★',
-    name: 'Google Maps Strategy',
-    tagline: 'Rank higher in local search with more reviews.',
+    symbol: '🤖',
+    name: 'AI Assistant',
+    tagline: '24/7 lead qualification & customer service.',
     description:
-      "When customers need help fast, they search on Google and choose the one with the most reviews. We launch a custom, automated Google Maps review campaign to get your past clients to leave glowing 5-star reviews. More reviews = better visibility = more calls.",
-    ideal: ['Local SEO growth', 'Review automation', 'Map pack ranking'],
-    price: 'Included in Launch Pack',
+      "Never miss another prospective client. Deploy a brand-trained 24/7 AI Assistant that greets website visitors, answers service inquiries in natural language, qualifies leads, and schedules discovery calls automatically.",
+    ideal: ['24/7 Lead Capture', 'Automated Qualification', 'Client Support'],
+    price: 'Custom Quote',
     popular: false,
-    cta: 'Boost Google Reviews',
+    cta: 'Explore AI Assistant',
+    to: '/ai-assistant',
   },
   {
     symbol: '◲',
@@ -33,6 +36,7 @@ const services = [
     price: 'Included in Launch Pack',
     popular: false,
     cta: 'Setup Social Media',
+    to: '/social-media-management',
   },
 ]
 
@@ -57,10 +61,6 @@ const staggerContainer = {
 }
 
 function ServiceCard({ service }) {
-  const handleClick = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
   return (
     <motion.div
       variants={fadeInUp}
@@ -124,16 +124,16 @@ function ServiceCard({ service }) {
         <div className={`font-display text-2xl font-medium mb-5 ${service.popular ? 'text-surface' : 'text-ink'}`}>
           {service.price}
         </div>
-        <button
-          onClick={handleClick}
-          className={`w-full py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
+        <Link
+          to={service.to}
+          className={`block text-center w-full py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
             service.popular
               ? 'bg-surface text-ink hover:bg-surface/90'
               : 'border border-ink text-ink hover:bg-ink hover:text-surface'
           }`}
         >
           {service.cta} →
-        </button>
+        </Link>
       </div>
     </motion.div>
   )
@@ -161,7 +161,7 @@ export default function Services() {
             The Three Pillars of Your<br />Complete Digital Presence
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-sm text-ink-muted max-w-md leading-relaxed">
-            We don't offer complex marketing retainers. We deliver the three exact assets local service and local businesses need to capture local demand.
+            We don't offer complex marketing retainers. We deliver the exact assets local service and growing businesses need to capture demand.
           </motion.p>
         </motion.div>
 
@@ -176,6 +176,23 @@ export default function Services() {
           {services.map((service) => (
             <ServiceCard key={service.name} service={service} />
           ))}
+        </motion.div>
+
+        {/* More Services full-width bar */}
+        <motion.div
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeInUp}
+          className="mt-8"
+        >
+          <Link
+            to="/services"
+            className="w-full py-4 bg-ink text-surface hover:bg-gold hover:text-ink border border-ink font-display text-base font-medium flex items-center justify-center gap-2 transition-all duration-300 group"
+          >
+            <span>More Services</span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </motion.div>
       </div>
     </section>

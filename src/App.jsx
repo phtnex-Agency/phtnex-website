@@ -20,6 +20,11 @@ import SocialMediaPage from './pages/SocialMediaPage'
 import BlogListPage from './pages/BlogListPage'
 import BlogPostPage from './pages/BlogPostPage'
 import PricingPage from './pages/PricingPage'
+import SeoPage from './pages/SeoPage'
+import N8nAutomationPage from './pages/N8nAutomationPage'
+import AiAgentsPage from './pages/AiAgentsPage'
+import AiAssistantPage from './pages/AiAssistantPage'
+import ServicesOverviewPage from './pages/ServicesOverviewPage'
 
 function HomePage() {
   return (
@@ -72,6 +77,11 @@ export function AppRoutes() {
       <Route path="/blog" element={<ContactRoute>{BlogListPage}</ContactRoute>} />
       <Route path="/blog/:slug" element={<ContactRoute>{BlogPostPage}</ContactRoute>} />
       <Route path="/pricing" element={<ContactRoute>{PricingPage}</ContactRoute>} />
+      <Route path="/seo" element={<ContactRoute>{SeoPage}</ContactRoute>} />
+      <Route path="/n8n-automation" element={<ContactRoute>{N8nAutomationPage}</ContactRoute>} />
+      <Route path="/ai-agents" element={<ContactRoute>{AiAgentsPage}</ContactRoute>} />
+      <Route path="/ai-assistant" element={<ContactRoute>{AiAssistantPage}</ContactRoute>} />
+      <Route path="/services" element={<ContactRoute>{ServicesOverviewPage}</ContactRoute>} />
     </Routes>
   )
 }

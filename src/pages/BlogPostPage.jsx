@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
+import BlogVisual, { BlogFigure } from '../components/blog/BlogVisual'
 import { blogPosts } from '../data/blogPosts'
 
 export default function BlogPostPage({ slug: propSlug, onContact }) {
@@ -79,6 +80,9 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
           >
             ← Back to All Articles
           </Link>
+          <span className="text-xs text-gold font-semibold uppercase tracking-[0.16em] block mb-3">
+            {post.category}
+          </span>
           <span className="text-xs text-surface/50 font-medium block mb-3">
             Published · {post.date}
           </span>
@@ -94,13 +98,21 @@ export default function BlogPostPage({ slug: propSlug, onContact }) {
       {/* Post Article Body */}
       <section className="section-py bg-surface">
         <div className="container-main max-w-3xl">
-          <article
-            className="prose prose-lg max-w-none text-ink-muted leading-relaxed space-y-6
-              [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mt-10 [&_h2]:mb-4
-              [&_p]:text-base [&_p]:leading-relaxed [&_p]:text-ink-muted
-              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-base [&_li]:text-ink-muted"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="mb-12 border border-border overflow-hidden">
+            <BlogVisual id={post.visual} className="aspect-[16/9]" />
+          </div>
+          {post.content.split('<!--figure-->').map((chunk, index, chunks) => (
+            <div key={index}>
+              <article
+                className="prose prose-lg max-w-none text-ink-muted leading-relaxed space-y-6
+                  [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mt-10 [&_h2]:mb-4
+                  [&_p]:text-base [&_p]:leading-relaxed [&_p]:text-ink-muted
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-base [&_li]:text-ink-muted"
+                dangerouslySetInnerHTML={{ __html: chunk }}
+              />
+              {index < chunks.length - 1 && <BlogFigure post={post} />}
+            </div>
+          ))}
 
           {/* Related Service CTA Section */}
           <div className="mt-16 pt-10 border-t border-border">

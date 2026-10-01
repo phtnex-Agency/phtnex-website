@@ -169,3 +169,22 @@
 .divider {
   @apply w-full h-px bg-border;
 }
+
+/* Premium nav link underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover::after,
+.nav-link[aria-expanded="true"]::after {
+  width: calc(100% - 1.75rem);
+  left: 0.875rem;
+}

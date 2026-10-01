@@ -8,12 +8,20 @@ export const blogPosts = [
     excerpt:
       'Uncover the real breakdown of website design costs for small businesses. Learn what you should expect to pay and how to avoid hidden agency retainer fees.',
     relatedPage: '/website-design',
+    category: 'Pricing',
+    visual: 'cost',
+    figure: {
+      kicker: 'The honest number',
+      value: '$140',
+      label: 'Complete 5-page website setup',
+      caption: 'A professional site should be a flat, owned asset — not a two-year retainer that quietly becomes $12,000.',
+    },
     content: `
       <h2>The Real Breakdown of Small Business Website Costs</h2>
       <p>If you have ever reached out to a digital agency for a website quote, you have probably received wild estimates ranging anywhere from $500 to $15,000+. For small business owners, travel agencies, and independent consultants, this wide pricing gap creates massive confusion. Why does one agency charge $5,000 while another offers a site for a few hundred dollars?</p>
 
       <p>The truth is that traditional web design agencies inflate their pricing due to bloated overhead costs, account manager salaries, and unnecessary multi-month discovery phases. On the flip side, ultra-cheap offshore templates often result in broken layouts, zero mobile responsiveness, and zero local search visibility.</p>
-
+<!--figure-->
       <h2>What Are You Actually Paying For in Web Design?</h2>
       <p>To understand fair pricing, it helps to break down what an effective small business website actually requires to generate leads and phone calls:</p>
 
@@ -47,12 +55,20 @@ export const blogPosts = [
     excerpt:
       "If your business isn’t showing up in local Google Maps searches, you’re missing out on warm client calls. Here’s why and how to fix it.",
     relatedPage: '/google-maps-seo',
+    category: 'Local SEO',
+    visual: 'maps',
+    figure: {
+      kicker: 'The Map Pack',
+      value: '70%',
+      label: 'of local clicks go to the top 3',
+      caption: 'If you are not in the map listing, you are not in the conversation. Most calls never reach page two.',
+    },
     content: `
       <h2>The Missing Link in Local Search Visibility</h2>
       <p>When potential clients need a travel agency, consultant, or local service provider, they open Google and search for terms like "travel agency near me" or "best tax consultant in [city]". Over 70% of all clicks go directly to the top three results in the Google Map Pack (the local map listing at the top of search results).</p>
 
       <p>If your business profile is missing from this top 3 section—or worse, doesn't show up at all—you are losing hundreds of high-intent customer leads to your local competitors every month.</p>
-
+<!--figure-->
       <h2>Top Reasons Your Business Isn't Ranking on Google Maps</h2>
       <p>Google's local ranking algorithm relies on three main pillars: <strong>Relevance, Distance, and Prominence</strong>. Here is why most small businesses fail to rank:</p>
 
@@ -78,12 +94,20 @@ export const blogPosts = [
     excerpt:
       'Traditional digital agencies take months to build simple websites. Discover how a structured 7-day launch timeline gets your business live fast.',
     relatedPage: '/website-design',
+    category: 'Process',
+    visual: 'timeline',
+    figure: {
+      kicker: 'The Phtnex window',
+      value: '7 days',
+      label: 'From discovery call to live launch',
+      caption: 'The delay is rarely the design. It is unstructured homework, unlimited revisions, and no day-by-day system.',
+    },
     content: `
       <h2>The 3-Month Agency Delay Nightmare</h2>
       <p>Ask most small business owners about their experience building a website, and you will hear a familiar story: what was promised as a "quick 3-week project" dragged on for four, five, or six months. Endless revisions, delayed copy approvals, and unresponsive designers keep your business invisible online for half a year.</p>
 
       <p>For an active travel agency, consulting firm, or service provider, every week your site remains unlaunched is revenue lost to competitors. Why does traditional website design take so long?</p>
-
+<!--figure-->
       <h2>Why Traditional Web Projects Get Delayed</h2>
       <p>Web projects stall for three major reasons:</p>
 
@@ -106,6 +130,56 @@ export const blogPosts = [
       </ul>
 
       <p>Don't wait months to launch your business online. Get a professional, fast-loading 5-page website delivered in guaranteed 7 days.</p>
+    `,
+  },
+  {
+    slug: 'what-is-an-ai-assistant-for-your-business',
+    title: 'Do You Need an AI Assistant for Your Business?',
+    metaDescription:
+      'Learn what a custom AI assistant does for small businesses, travel agencies, and consultants. Discover how 24/7 lead qualification and support boost revenue.',
+    date: 'October 1, 2026',
+    excerpt:
+      'Discover how a custom AI assistant turns late-night web visitors into qualified client leads, automates customer service, and frees up your daily schedule.',
+    relatedPage: '/ai-assistant',
+    category: 'AI',
+    visual: 'assistant',
+    figure: {
+      kicker: 'After hours',
+      value: '60%',
+      label: 'of enquiries arrive when you are offline',
+      caption: 'A trained assistant answers in seconds, qualifies the lead, and books the call — without a support hire.',
+    },
+    content: `
+      <h2>What Is an AI Assistant for Small Business?</h2>
+      <p>If you run a travel agency, consultancy, or local service business, you know the frustration of losing potential clients simply because you couldn't respond fast enough. Over 60% of prospective clients reach out during evenings or weekends when your team is offline. When inquiries sit unanswered for hours, prospective buyers move directly to competitors who respond instantly.</p>
+
+      <p>A custom AI Assistant is an intelligent, 24/7 digital team member trained specifically on your business offerings, pricing parameters, and FAQ knowledge base. Unlike old-fashioned decision-tree chatbots that annoy users with generic pre-programmed options, modern AI assistants understand natural human language, answer complex questions accurately, and qualify leads round-the-clock.</p>
+<!--figure-->
+      <h2>Key Benefits of Having an AI Assistant</h2>
+      <p>Implementing a custom AI assistant delivers immediate operational benefits for growing small businesses:</p>
+
+      <ul>
+        <li><strong>Instant 24/7 Response Time:</strong> Greet visitors within seconds regardless of time zone or office hours, capturing high-intent leads before they bounce.</li>
+        <li><strong>Automated Lead Qualification:</strong> Ask custom qualifying questions (budget, project scope, timeline) and filter out unqualified leads before they reach your inbox.</li>
+        <li><strong>Seamless CRM &amp; Booking Integration:</strong> Directly collect contact information, sync inquiry data into your CRM, or prompt visitors to book a strategy call on your calendar.</li>
+        <li><strong>Reduction in Support Load:</strong> Handle 70%+ of repetitive customer inquiries regarding services, pricing, business hours, and location automatically.</li>
+        <li><strong>Multilingual Client Support:</strong> Communicate fluently in multiple languages, opening your services to international clients seamlessly.</li>
+      </ul>
+
+      <h2>When Is It Worth Getting an AI Assistant?</h2>
+      <p>An AI assistant is not just a flashy tech widget—it is a measurable revenue driver. Having an AI assistant becomes essential if your business meets any of the following criteria:</p>
+
+      <ul>
+        <li>You receive more than 15–20 website inquiries per week and struggle to follow up instantly.</li>
+        <li>You spend over 2 hours a day answering repetitive questions about pricing, availability, or service packages.</li>
+        <li>You serve clients across multiple time zones or international regions (e.g. travel agencies, global consultants).</li>
+        <li>You want to boost website conversion rates without hiring additional full-time customer support staff.</li>
+      </ul>
+
+      <h2>The Phtnex AI Assistant Solution</h2>
+      <p>At Phtnex, we design and deploy custom, brand-trained AI Assistants tailored specifically for your business workflow. We integrate your assistant directly into your website, WhatsApp, or customer channels to start turning visitors into booked calls immediately.</p>
+
+      <p>Want to see how a custom AI assistant can transform your client onboarding? <a href="/ai-assistant">Explore our AI Assistant for Business service →</a></p>
     `,
   },
 ]

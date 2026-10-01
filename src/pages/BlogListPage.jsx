@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
+import BlogVisual from '../components/blog/BlogVisual'
 import { blogPosts } from '../data/blogPosts'
 
 export default function BlogListPage() {
@@ -52,20 +53,28 @@ export default function BlogListPage() {
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
-                className="bg-surface-2 border border-border p-8 hover:border-gold transition-all duration-300 flex flex-col justify-between group"
+                className="bg-surface-2 border border-border hover:border-gold/60 transition-all duration-300 flex flex-col group overflow-hidden"
               >
-                <div>
-                  <span className="text-xs text-gold font-semibold tracking-wider uppercase block mb-3">
-                    {post.date}
+                <Link to={`/blog/${post.slug}`} className="relative block aspect-[16/9] overflow-hidden bg-ink">
+                  <div className="absolute inset-0">
+                    <BlogVisual id={post.visual} className="h-full w-full transition-transform duration-700 group-hover:scale-[1.03]" />
+                  </div>
+                  <span className="absolute top-4 left-4 z-10 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink bg-gold px-3 py-1.5">
+                    {post.category}
                   </span>
-                  <h2 className="font-display text-2xl font-medium text-ink group-hover:text-gold transition-colors mb-4 leading-snug">
-                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                  </h2>
-                  <p className="text-sm text-ink-muted leading-relaxed mb-6">
-                    {post.excerpt}
-                  </p>
-                </div>
-                <div>
+                </Link>
+                <div className="p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <span className="text-xs text-gold font-semibold tracking-wider uppercase block mb-3">
+                      {post.date}
+                    </span>
+                    <h2 className="font-display text-2xl font-medium text-ink group-hover:text-gold transition-colors mb-4 leading-snug">
+                      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                    </h2>
+                    <p className="text-sm text-ink-muted leading-relaxed mb-6">
+                      {post.excerpt}
+                    </p>
+                  </div>
                   <Link
                     to={`/blog/${post.slug}`}
                     className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-ink group-hover:text-gold transition-colors"

@@ -14,15 +14,15 @@ const icons = {
 
 const coreServices = [
   { label: 'Website Design',        to: '/website-design',          desc: '5-page site, 7-day delivery',         icon: 'website',    price: '$140' },
-  { label: 'Google Maps SEO',       to: '/google-maps-seo',         desc: 'Map Pack ranking & reviews',          icon: 'maps',       price: 'Pack' },
+  { label: 'Google Maps SEO',       to: '/google-maps-seo',         desc: 'Map Pack ranking & reviews',          icon: 'maps',       price: '$270' },
   { label: 'Social Media',          to: '/social-media-management', desc: 'Monthly content & credibility',       icon: 'social',     price: '$150/mo' },
-  { label: 'Organic SEO',           to: '/seo',                     desc: 'Technical & content SEO',             icon: 'seo',        price: 'Quote' },
+  { label: 'Organic SEO',           to: '/seo',                     desc: 'Technical & content SEO',             icon: 'seo',        price: 'Custom Quote' },
 ]
 
 const aiServices = [
-  { label: 'n8n Automation',        to: '/n8n-automation',          desc: 'Connect tools & automate tasks',      icon: 'automation', price: 'Quote' },
-  { label: 'AI Agent Development',  to: '/ai-agents',               desc: 'Autonomous multi-step agents',        icon: 'agent',      price: 'Quote' },
-  { label: 'AI Assistant',          to: '/ai-assistant',            desc: '24/7 lead capture & support',         icon: 'assistant',  price: 'Quote' },
+  { label: 'n8n Automation',        to: '/n8n-automation',          desc: 'Connect tools & automate tasks',      icon: 'automation', price: 'Custom Quote' },
+  { label: 'AI Agent Development',  to: '/ai-agents',               desc: 'Autonomous multi-step agents',        icon: 'agent',      price: 'Custom Quote' },
+  { label: 'AI Assistant',          to: '/ai-assistant',            desc: '24/7 lead capture & support',         icon: 'assistant',  price: 'Custom Quote' },
 ]
 
 const NavLink = ({ children, className = '', ...props }) => (
@@ -62,7 +62,15 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (menuOpen) {
+      document.body.setAttribute('data-menu-open', 'true')
+    } else {
+      document.body.removeAttribute('data-menu-open')
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.removeAttribute('data-menu-open')
+    }
   }, [menuOpen])
 
   // Close dropdown on route change
@@ -92,7 +100,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-smooth ${
           elevated
-            ? 'bg-surface/80 backdrop-blur-xl border-b border-border/80 shadow-[0_1px_0_rgba(201,169,110,0.12),0_8px_32px_rgba(10,10,10,0.04)]'
+            ? 'bg-surface border-b border-border shadow-[0_1px_0_rgba(201,169,110,0.18),0_8px_32px_rgba(10,10,10,0.07)]'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
@@ -157,8 +165,8 @@ export default function Navbar() {
                 <div
                   className={`
                     fixed left-0 right-0 top-[67px] lg:top-[71px]
-                    bg-surface/95 backdrop-blur-2xl border-b border-border
-                    shadow-[0_24px_64px_-12px_rgba(10,10,10,0.1)]
+                    bg-surface backdrop-blur-2xl border-b border-border
+                    shadow-[0_8px_40px_-4px_rgba(10,10,10,0.18),0_2px_8px_-2px_rgba(10,10,10,0.08)]
                     transition-all duration-500 ease-smooth origin-top
                     ${servicesDropdown
                       ? 'opacity-100 translate-y-0 pointer-events-auto'
@@ -176,7 +184,7 @@ export default function Navbar() {
                         <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-light mb-4 px-3">
                           Core Services
                         </p>
-                        <div className="flex flex-col gap-0.5">
+                        <div className="flex flex-col gap-1">
                           {coreServices.map((item) => (
                             <Link
                               key={item.to}
@@ -184,7 +192,7 @@ export default function Navbar() {
                               onClick={close}
                               className="group flex items-center gap-3.5 px-3 py-3 hover:bg-surface-2/80 transition-all duration-200"
                             >
-                              <span className="flex items-center justify-center w-9 h-9 bg-surface-2 border border-border group-hover:border-gold/40 group-hover:bg-gold/8 transition-all duration-300 text-ink-muted group-hover:text-gold shrink-0">
+                              <span className="flex items-center justify-center w-9 h-9 bg-gold/[0.07] border border-gold/20 group-hover:border-gold/50 group-hover:bg-gold/[0.14] transition-all duration-300 text-gold/70 group-hover:text-gold shrink-0">
                                 <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4" aria-hidden>
                                   {icons[item.icon]}
                                 </svg>
@@ -197,7 +205,7 @@ export default function Navbar() {
                                   {item.desc}
                                 </span>
                               </div>
-                              <span className="text-[10px] text-ink-light/60 font-medium tracking-wider shrink-0 group-hover:text-gold/80 transition-colors duration-200">
+                              <span className="text-[11px] text-gold/60 font-semibold tabular-nums tracking-wide shrink-0 group-hover:text-gold transition-colors duration-200 min-w-[72px] text-right">
                                 {item.price}
                               </span>
                             </Link>
@@ -206,7 +214,7 @@ export default function Navbar() {
                       </div>
 
                       {/* ── Divider ── */}
-                      <div className="w-px bg-gradient-to-b from-transparent via-border to-transparent self-stretch" />
+                      <div className="w-px bg-gradient-to-b from-transparent via-border-dark/60 to-transparent self-stretch" />
 
                       {/* ── Column 2: AI & Automation ── */}
                       <div className="pl-8 pr-10">
@@ -221,7 +229,7 @@ export default function Navbar() {
                               onClick={close}
                               className="group flex items-center gap-3.5 px-3 py-3 hover:bg-surface-2/80 transition-all duration-200"
                             >
-                              <span className="flex items-center justify-center w-9 h-9 bg-surface-2 border border-border group-hover:border-gold/40 group-hover:bg-gold/8 transition-all duration-300 text-ink-muted group-hover:text-gold shrink-0">
+                              <span className="flex items-center justify-center w-9 h-9 bg-gold/[0.07] border border-gold/20 group-hover:border-gold/50 group-hover:bg-gold/[0.14] transition-all duration-300 text-gold/70 group-hover:text-gold shrink-0">
                                 <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4" aria-hidden>
                                   {icons[item.icon]}
                                 </svg>
@@ -234,7 +242,7 @@ export default function Navbar() {
                                   {item.desc}
                                 </span>
                               </div>
-                              <span className="text-[10px] text-ink-light/60 font-medium tracking-wider shrink-0 group-hover:text-gold/80 transition-colors duration-200">
+                              <span className="text-[11px] text-gold/60 font-semibold tabular-nums tracking-wide shrink-0 group-hover:text-gold transition-colors duration-200 min-w-[72px] text-right">
                                 {item.price}
                               </span>
                             </Link>
@@ -243,7 +251,7 @@ export default function Navbar() {
                       </div>
 
                       {/* ── Column 3: CTA panel ── */}
-                      <div className="border-l border-border pl-8 self-stretch flex flex-col justify-between ml-2">
+                      <div className="border-l border-border-dark/50 pl-8 self-stretch flex flex-col justify-between ml-2 bg-surface-2/50 -mr-px pr-2 rounded-sm">
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-light mb-4">
                             Quick Access
@@ -276,7 +284,7 @@ export default function Navbar() {
                           <a
                             href="#contact"
                             onClick={(e) => handleHashNav(e, '#contact')}
-                            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink bg-gold px-5 py-3 hover:bg-gold-light transition-colors duration-300"
+                            className="group relative inline-flex items-center gap-2 overflow-hidden bg-ink text-surface text-[11px] font-semibold tracking-[0.14em] uppercase px-5 py-3 transition-all duration-300 hover:bg-accent-hover w-full justify-center"
                           >
                             Book a Free Call
                             <span aria-hidden>→</span>
@@ -354,7 +362,7 @@ export default function Navbar() {
 
       {/* ── Mobile Menu ── */}
       <div
-        className={`fixed inset-0 z-40 bg-surface/98 backdrop-blur-2xl flex flex-col transition-all duration-500 ease-smooth lg:hidden overflow-y-auto ${
+        className={`fixed inset-0 z-50 bg-surface flex flex-col transition-all duration-500 ease-smooth lg:hidden overflow-y-auto ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -407,7 +415,7 @@ export default function Navbar() {
                       onClick={() => setMenuOpen(false)}
                       className="flex items-center gap-3 py-2.5 text-ink-muted hover:text-ink transition-colors duration-200"
                     >
-                      <span className="flex items-center justify-center w-7 h-7 bg-surface-2 border border-border text-ink-muted shrink-0">
+                      <span className="flex items-center justify-center w-7 h-7 bg-gold/[0.07] border border-gold/20 text-gold/70 shrink-0">
                         <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5" aria-hidden>
                           {icons[item.icon]}
                         </svg>
@@ -424,7 +432,7 @@ export default function Navbar() {
                       onClick={() => setMenuOpen(false)}
                       className="flex items-center gap-3 py-2.5 text-ink-muted hover:text-ink transition-colors duration-200"
                     >
-                      <span className="flex items-center justify-center w-7 h-7 bg-surface-2 border border-border text-ink-muted shrink-0">
+                      <span className="flex items-center justify-center w-7 h-7 bg-gold/[0.07] border border-gold/20 text-gold/70 shrink-0">
                         <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5" aria-hidden>
                           {icons[item.icon]}
                         </svg>

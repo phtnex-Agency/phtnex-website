@@ -8,10 +8,21 @@ export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false)
   const [clicked, setClicked] = useState(false)
 
+  const [menuOpen, setMenuOpen] = useState(false)
+
   // Fade in after 1.2s for a polished entrance
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 1200)
     return () => clearTimeout(timer)
+  }, [])
+
+  // Hide when mobile nav menu is open (Navbar sets data-menu-open on body)
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setMenuOpen(document.body.hasAttribute('data-menu-open'))
+    })
+    observer.observe(document.body, { attributes: true, attributeFilter: ['data-menu-open'] })
+    return () => observer.disconnect()
   }, [])
 
   const handleClick = () => {
@@ -74,9 +85,9 @@ export default function WhatsAppButton() {
         className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6"
         style={{
           zIndex: 99999,
-          opacity: visible ? 1 : 0,
+          opacity: (visible && !menuOpen) ? 1 : 0,
           transition: 'opacity 0.3s ease',
-          pointerEvents: visible ? 'auto' : 'none',
+          pointerEvents: (visible && !menuOpen) ? 'auto' : 'none',
         }}
       >
         {/* Button + pulse rings container */}

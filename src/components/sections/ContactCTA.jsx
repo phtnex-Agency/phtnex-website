@@ -17,8 +17,8 @@ const callSteps = [
 ]
 
 const serviceOptions = [
-  'The 7-Day Complete Launch ($140)',
-  'Website Setup ($270)',
+  'Website Setup ($140)',
+  'The 7-Day Complete Launch ($270)',
   'Ongoing Content & Social ($150/mo)',
   'Not sure / Custom Inquiry',
 ]
